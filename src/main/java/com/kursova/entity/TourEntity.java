@@ -1,4 +1,4 @@
-package com.kursova.dao;
+package com.kursova.entity;
 
 public class TourEntity {
     private final int id;

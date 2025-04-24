@@ -1,5 +1,8 @@
 package com.kursova.dao;
 
+import com.kursova.entity.TourEntity;
+import com.kursova.entity.TransportEntity;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
