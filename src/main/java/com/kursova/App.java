@@ -1,23 +1,20 @@
 package com.kursova;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
+import com.kursova.dao.TransportDAO;
+import com.kursova.dao.TransportEntity;
+
 import java.sql.SQLException;
+import java.util.List;
 
-
-public class App 
+public class App
 {
-    public static void main( String[] args )
-    {
-        String url = "jdbc:postgresql://localhost:5432/kursova";
-        String user = "postgres";
-        String password = "123123qq";
+    public static void main( String[] args ) throws SQLException {
+        TransportDAO dao = new TransportDAO();
+        dao.insert(new TransportEntity("Bus"));
 
-        try (Connection conn = DriverManager.getConnection(url, user, password)) {
-            System.out.println("Connected to the PostgreSQL server successfully!");
-        } catch (SQLException e) {
-            System.out.println("Connection failure.");
-            e.printStackTrace();
+        List<TransportEntity> allTransports = dao.getAll();
+        for (TransportEntity t : allTransports) {
+            System.out.println(t.getName());
         }
     }
 }
