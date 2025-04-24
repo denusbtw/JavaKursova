@@ -1,18 +1,20 @@
 package com.kursova.dao;
 
-import com.kursova.db.DatabaseConnection;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class FavouriteTourDAO {
+    private final Connection connection;
 
-    public void insert(int tourId) throws SQLException {
+    public FavouriteTourDAO(Connection connection) {
+        this.connection = connection;
+    }
+
+    public void insert(int tourId) {
         String sql = "INSERT INTO favourite_tour (tour_id) VALUES (?)";
 
-        try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
 
             stmt.setInt(1, tourId);
             stmt.executeUpdate();
@@ -22,11 +24,10 @@ public class FavouriteTourDAO {
         }
     }
 
-    public void delete(int id) throws SQLException {
+    public void delete(int id) {
         String sql = "DELETE FROM favourite_tour WHERE id = ?";
 
-        try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
 
             stmt.setInt(1, id);
             stmt.executeUpdate();
@@ -36,11 +37,10 @@ public class FavouriteTourDAO {
         }
     }
 
-    public void deleteByTourId(int tourId) throws SQLException {
+    public void deleteByTourId(int tourId) {
         String sql = "DELETE FROM favourite_tour WHERE tour_id = ?";
 
-        try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
 
             stmt.setInt(1, tourId);
             stmt.executeUpdate();
@@ -54,11 +54,10 @@ public class FavouriteTourDAO {
         List<TourEntity> favourites = new ArrayList<>();
         String sql = "SELECT t.* FROM favourite_tour f JOIN tour t ON t.id = f.tour_id";
 
-        try (Connection conn = DatabaseConnection.getConnection();
-             Statement stmt = conn.createStatement();
+        try (Statement stmt = connection.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
 
-            TransportDAO transportDAO = new TransportDAO();
+            TransportDAO transportDAO = new TransportDAO(connection);
 
             while (rs.next()) {
                 TransportEntity transport = transportDAO.getById(rs.getInt("transport_id"));

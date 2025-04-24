@@ -1,18 +1,20 @@
 package com.kursova.dao;
 
-import com.kursova.db.DatabaseConnection;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class TransportDAO {
+    private final Connection connection;
 
-    public void insert(TransportEntity transport) throws SQLException {
+    public TransportDAO(Connection connection) {
+        this.connection = connection;
+    }
+
+    public void insert(TransportEntity transport) {
         String sql = "INSERT INTO transport (name) VALUES (?)";
 
-        try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
 
             stmt.setString(1, transport.getName());
 
@@ -22,24 +24,24 @@ public class TransportDAO {
         }
     }
 
-    public void update(TransportEntity transport) throws SQLException {
+    public void update(TransportEntity transport) {
         String sql = "UPDATE transport SET name = ? WHERE id = ?";
 
-        try (Connection conn = DatabaseConnection.getConnection();
-            PreparedStatement stmt = conn.prepareStatement(sql)) {
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
 
             stmt.setString(1, transport.getName());
             stmt.setInt(2, transport.getId());
 
             stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 
-    public void delete(int id) throws SQLException {
+    public void delete(int id) {
         String sql = "DELETE FROM transport WHERE id = ?";
 
-        try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
 
             stmt.setInt(1, id);
 
@@ -49,12 +51,11 @@ public class TransportDAO {
         }
     }
 
-    public List<TransportEntity> getAll() throws SQLException {
+    public List<TransportEntity> getAll() {
         List<TransportEntity> transports = new ArrayList<>();
         String sql = "SELECT * FROM transport";
 
-        try (Connection conn = DatabaseConnection.getConnection();
-             Statement stmt = conn.createStatement();
+        try (Statement stmt = connection.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
 
             while (rs.next()) {
@@ -73,8 +74,7 @@ public class TransportDAO {
 
     public TransportEntity getById(int id) {
         String sql = "SELECT * FROM transport WHERE id = ?";
-        try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
 
             stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();

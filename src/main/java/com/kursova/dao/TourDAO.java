@@ -1,17 +1,20 @@
 package com.kursova.dao;
 
-import com.kursova.db.DatabaseConnection;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class TourDAO {
+    private final Connection connection;
+
+    public TourDAO(Connection connection) {
+        this.connection = connection;
+    }
+
     public void insert(TourEntity tour) {
         String sql = "INSERT INTO tour (name, type, transport_id, meal_option, number_of_days, price, rating) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
-        try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
 
             stmt.setString(1, tour.getName());
             stmt.setString(2, tour.getType());
@@ -30,8 +33,7 @@ public class TourDAO {
     public void update(TourEntity tour) {
         String sql = "UPDATE tour SET name = ?, type = ?, transport_id = ?, meal_option = ?, number_of_days = ?, price = ?, rating = ? WHERE id = ?";
 
-        try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
 
             stmt.setString(1, tour.getName());
             stmt.setString(2, tour.getType());
@@ -51,8 +53,7 @@ public class TourDAO {
     public void delete(int id) {
         String sql = "DELETE FROM tour WHERE id = ?";
 
-        try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
 
             stmt.setInt(1, id);
 
@@ -66,11 +67,10 @@ public class TourDAO {
         List<TourEntity> tours = new ArrayList<>();
         String sql = "SELECT * FROM tour";
 
-        try (Connection conn = DatabaseConnection.getConnection();
-             Statement stmt = conn.createStatement();
+        try (Statement stmt = connection.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
 
-            TransportDAO transportDAO = new TransportDAO();
+            TransportDAO transportDAO = new TransportDAO(connection);
 
             while (rs.next()) {
                 TransportEntity transport = transportDAO.getById(rs.getInt("transport_id"));
@@ -96,14 +96,13 @@ public class TourDAO {
 
     public TourEntity getById(int id) {
         String sql = "SELECT * FROM tour WHERE id = ?";
-        try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
 
             stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
-                TransportDAO transportDAO = new TransportDAO();
+                TransportDAO transportDAO = new TransportDAO(connection);
                 TransportEntity transport = transportDAO.getById(rs.getInt("transport_id"));
 
                 return new TourEntity(
@@ -152,8 +151,7 @@ public class TourDAO {
             ORDER BY t.id DESC
             """;
 
-        try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
 
             stmt.setString(1, type);
             stmt.setString(2, type);
@@ -169,7 +167,7 @@ public class TourDAO {
             stmt.setDouble(12, maxRating);
 
             ResultSet rs = stmt.executeQuery();
-            TransportDAO transportDAO = new TransportDAO();
+            TransportDAO transportDAO = new TransportDAO(connection);
 
             while (rs.next()) {
                 TransportEntity transport = transportDAO.getById(rs.getInt("transport_id"));
@@ -209,11 +207,10 @@ public class TourDAO {
 
         String sql = "SELECT * FROM tour ORDER BY " + sortBy + " " + direction;
 
-        try (Connection conn = DatabaseConnection.getConnection();
-             Statement stmt = conn.createStatement();
+        try (Statement stmt = connection.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
 
-            TransportDAO transportDAO = new TransportDAO();
+            TransportDAO transportDAO = new TransportDAO(connection);
 
             while (rs.next()) {
                 TransportEntity transport = transportDAO.getById(rs.getInt("transport_id"));
