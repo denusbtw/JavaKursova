@@ -18,8 +18,20 @@ import java.util.List;
 public class FavoriteApiService {
     private static final Logger logger = LoggerFactory.getLogger(FavoriteApiService.class);
     private static final String URL = "http://localhost:8080/api/favorites";
-    private final HttpClient client = HttpClient.newHttpClient();
-    private final ObjectMapper mapper = new ObjectMapper();
+
+    private final HttpClient client;
+    private final ObjectMapper mapper;
+
+    // Конструктор за замовчуванням — для продакшну
+    public FavoriteApiService() {
+        this(HttpClient.newHttpClient(), new ObjectMapper());
+    }
+
+    // Конструктор для тестів — ін'єкція залежностей
+    public FavoriteApiService(HttpClient client, ObjectMapper mapper) {
+        this.client = client;
+        this.mapper = mapper;
+    }
 
     public PageResponse<TourDTO> getFavorites(
             String name, String type, String mealOption,
@@ -102,4 +114,3 @@ public class FavoriteApiService {
         }
     }
 }
-

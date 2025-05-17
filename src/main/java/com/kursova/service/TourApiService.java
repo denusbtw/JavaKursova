@@ -20,8 +20,17 @@ public class TourApiService {
 
     private static final Logger logger = LoggerFactory.getLogger(TourApiService.class);
     private static final String BASE_URL = "http://localhost:8080/api/tours";
-    private final HttpClient client = HttpClient.newHttpClient();
-    private final ObjectMapper mapper = new ObjectMapper();
+    private final HttpClient client;
+    private final ObjectMapper mapper;
+
+    public TourApiService() {
+        this(HttpClient.newHttpClient(), new ObjectMapper());
+    }
+
+    public TourApiService(HttpClient client, ObjectMapper mapper) {
+        this.client = client;
+        this.mapper = mapper;
+    }
 
     public PageResponse<TourDTO> getTours(int page, int size, String nameFilter,
                                           String type, String transportName,

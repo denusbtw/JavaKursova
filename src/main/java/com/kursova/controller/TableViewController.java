@@ -2,8 +2,8 @@ package com.kursova.controller;
 
 import com.kursova.model.PageResponse;
 import com.kursova.model.TourDTO;
-import com.kursova.service.TourApiService;
 import com.kursova.service.FavoriteApiService;
+import com.kursova.service.TourApiService;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -21,23 +21,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TableViewController {
+
     private static final Logger logger = LoggerFactory.getLogger(TableViewController.class);
 
-    private boolean showFavourites = false;
-    private int currentPage = 0;
     private final int pageSize = 10;
+    private int currentPage = 0;
     private int totalPages = 1;
+    private boolean showFavourites = false;
+    private String searchQuery = "";
 
     private final TourApiService tourService = new TourApiService();
     private final FavoriteApiService favoriteService = new FavoriteApiService();
 
-    public void setShowFavourites(boolean value) {
-        this.showFavourites = value;
-        loadData();
-    }
-
     @FXML private Button backButton;
-
     @FXML private TextField searchField;
     @FXML private Button searchButton;
 
@@ -65,6 +61,11 @@ public class TableViewController {
     @FXML private Button prevPageButton;
     @FXML private Button nextPageButton;
     @FXML private Label pageLabel;
+
+    public void setShowFavourites(boolean showFavourites) {
+        this.showFavourites = showFavourites;
+        loadData();
+    }
 
     @FXML
     public void initialize() {
@@ -97,69 +98,61 @@ public class TableViewController {
         loadFilterData();
     }
 
-    private String searchQuery = "";
+    @FXML
+    public void handleSearch(ActionEvent event) {
+        String inputText = searchField.getText();
+        searchQuery = inputText != null ? inputText.trim() : "";
+        currentPage = 0;
+        loadData();
+        logger.info("User searched for '{}'", searchQuery);
+    }
+
+    @FXML
+    public void handleApplyFilters(ActionEvent event) {
+        currentPage = 0;
+        loadData();
+    }
+
+    @FXML
+    public void handlePrevPage(ActionEvent event) {
+        if (currentPage > 0) {
+            currentPage--;
+            loadData();
+            logger.info("Navigated to page {}", currentPage);
+        }
+    }
+
+    @FXML
+    public void handleNextPage(ActionEvent event) {
+        if (currentPage < totalPages - 1) {
+            currentPage++;
+            loadData();
+            logger.info("Navigated to page {}", currentPage);
+        }
+    }
+
+    @FXML
+    public void handleBack(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/kursova/ui/views/main.fxml"));
+            Parent root = loader.load();
+
+            MainController controller = loader.getController();
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            controller.setPrimaryStage(stage);
+
+            stage.setScene(new Scene(root));
+            stage.setTitle("Головне меню");
+            logger.info("Returning to main menu");
+        } catch (IOException e) {
+            logger.error("Failed to load main menu", e);
+        }
+    }
 
     private void loadData() {
-        if (showFavourites) {
-            String type = typeFilterBox.getValue();
-            if ("Усі".equals(type)) type = null;
-
-            String transportName = transportFilterBox.getValue();
-            if ("Усі".equals(transportName)) transportName = null;
-
-            String mealOption = mealOptionFilterBox.getValue();
-            if ("Усі".equals(mealOption)) mealOption = null;
-
-            Integer minPrice = parseIntOrNull(minPriceField.getText());
-            Integer maxPrice = parseIntOrNull(maxPriceField.getText());
-            Integer minDays = parseIntOrNull(minDaysField.getText());
-            Integer maxDays = parseIntOrNull(maxDaysField.getText());
-            Double minRating = parseDoubleOrNull(minRatingField.getText());
-            Double maxRating = parseDoubleOrNull(maxRatingField.getText());
-
-            StringBuilder logMessage = new StringBuilder(showFavourites ? "Loading FAVORITES with filters:" : "Loading TOURS with filters:");
-
-            if (searchQuery != null && !searchQuery.isBlank()) logMessage.append(" name='").append(searchQuery).append("'");
-            if (type != null) logMessage.append(", type='").append(type).append("'");
-            if (transportName != null) logMessage.append(", transport='").append(transportName).append("'");
-            if (mealOption != null) logMessage.append(", meal='").append(mealOption).append("'");
-
-            if (minPrice != null || maxPrice != null)
-                logMessage.append(", price=[").append(minPrice != null ? minPrice : "").append("-").append(maxPrice != null ? maxPrice : "").append("]");
-            if (minDays != null || maxDays != null)
-                logMessage.append(", days=[").append(minDays != null ? minDays : "").append("-").append(maxDays != null ? maxDays : "").append("]");
-            if (minRating != null || maxRating != null)
-                logMessage.append(", rating=[").append(minRating != null ? minRating : "").append("-").append(maxRating != null ? maxRating : "").append("]");
-
-            logger.info(logMessage.toString());
-
-            PageResponse<TourDTO> filteredFavorites = favoriteService.getFavorites(
-                    searchQuery, type, mealOption,
-                    minDays, maxDays,
-                    minPrice, maxPrice,
-                    minRating, maxRating,
-                    transportName,
-                    currentPage, pageSize
-            );
-
-            tourTable.setItems(FXCollections.observableArrayList(filteredFavorites.getContent()));
-            totalPages = filteredFavorites.getTotalPages();
-
-            pageLabel.setText("Сторінка " + (currentPage + 1) + " з " + totalPages);
-            prevPageButton.setDisable(currentPage == 0);
-            nextPageButton.setDisable(currentPage >= totalPages - 1);
-            return;
-        }
-
-        String type = typeFilterBox.getValue();
-        if (type != null && type.equals("Усі")) type = null;
-
-        String transportName = transportFilterBox.getValue();
-        if (transportName != null && transportName.equals("Усі")) transportName = null;
-
-        String mealOption = mealOptionFilterBox.getValue();
-        if (mealOption != null && mealOption.equals("Усі")) mealOption = null;
-
+        String type = getSelectedFilterValue(typeFilterBox);
+        String transportName = getSelectedFilterValue(transportFilterBox);
+        String mealOption = getSelectedFilterValue(mealOptionFilterBox);
         Integer minPrice = parseIntOrNull(minPriceField.getText());
         Integer maxPrice = parseIntOrNull(maxPriceField.getText());
         Integer minDays = parseIntOrNull(minDaysField.getText());
@@ -167,12 +160,23 @@ public class TableViewController {
         Double minRating = parseDoubleOrNull(minRatingField.getText());
         Double maxRating = parseDoubleOrNull(maxRatingField.getText());
 
-        var pageResponse = tourService.getTours(currentPage, pageSize, searchQuery,
-                type, transportName, mealOption, minPrice, maxPrice, minDays, maxDays, minRating, maxRating);
+        logFilterParameters(type, transportName, mealOption, minPrice, maxPrice, minDays, maxDays, minRating, maxRating);
+
+        PageResponse<TourDTO> pageResponse = showFavourites
+                ? favoriteService.getFavorites(
+                searchQuery, type, mealOption, minDays, maxDays,
+                minPrice, maxPrice, minRating, maxRating,
+                transportName, currentPage, pageSize
+        )
+                : tourService.getTours(
+                currentPage, pageSize, searchQuery,
+                type, transportName, mealOption,
+                minPrice, maxPrice, minDays, maxDays,
+                minRating, maxRating
+        );
 
         tourTable.setItems(FXCollections.observableArrayList(pageResponse.getContent()));
         totalPages = pageResponse.getTotalPages();
-
         pageLabel.setText("Сторінка " + (currentPage + 1) + " з " + totalPages);
         prevPageButton.setDisable(currentPage == 0);
         nextPageButton.setDisable(currentPage >= totalPages - 1);
@@ -183,13 +187,13 @@ public class TableViewController {
         types.add(0, "Усі");
         typeFilterBox.setItems(FXCollections.observableArrayList(types));
 
-        List<String> transportNames = new ArrayList<>(tourService.getTransportNames());
-        transportNames.add(0, "Усі");
-        transportFilterBox.setItems(FXCollections.observableArrayList(transportNames));
+        List<String> transports = new ArrayList<>(tourService.getTransportNames());
+        transports.add(0, "Усі");
+        transportFilterBox.setItems(FXCollections.observableArrayList(transports));
 
-        List<String> mealOptions = new ArrayList<>(tourService.getMealOptions());
-        mealOptions.add(0, "Усі");
-        mealOptionFilterBox.setItems(FXCollections.observableArrayList(mealOptions));
+        List<String> meals = new ArrayList<>(tourService.getMealOptions());
+        meals.add(0, "Усі");
+        mealOptionFilterBox.setItems(FXCollections.observableArrayList(meals));
     }
 
     private void addFavouriteButtonToTable() {
@@ -213,17 +217,6 @@ public class TableViewController {
                     updateButtonStyle(tour);
                     tourTable.refresh();
                 });
-
-            }
-
-            private void updateButtonStyle(TourDTO tour) {
-                if (tour != null && Boolean.TRUE.equals(tour.getIsFavorite())) {
-                    actionButton.setStyle("-fx-background-color: red;");
-                    actionButton.setText("❤");
-                } else {
-                    actionButton.setStyle("-fx-background-color: lightgray;");
-                    actionButton.setText("♡");
-                }
             }
 
             @Override
@@ -238,65 +231,67 @@ public class TableViewController {
                 }
             }
 
+            private void updateButtonStyle(TourDTO tour) {
+                if (tour != null && Boolean.TRUE.equals(tour.getIsFavorite())) {
+                    actionButton.setStyle("-fx-background-color: red;");
+                    actionButton.setText("❤");
+                } else {
+                    actionButton.setStyle("-fx-background-color: lightgray;");
+                    actionButton.setText("♡");
+                }
+            }
         });
     }
 
-    @FXML
-    public void handleBack(ActionEvent event) {
+    private String getSelectedFilterValue(ComboBox<String> comboBox) {
+        String value = comboBox.getValue();
+        return (value != null && !"Усі".equals(value)) ? value : null;
+    }
+
+    private Integer parseIntOrNull(String text) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/kursova/ui/views/main.fxml"));
-            Parent root = loader.load();
-
-            MainController controller = loader.getController();
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            controller.setPrimaryStage(stage); // ← ОБОВʼЯЗКОВО
-
-            stage.setScene(new Scene(root));
-            stage.setTitle("Головне меню");
-            logger.info("Returning to main menu");
-        } catch (IOException e) {
-            logger.error("Failed to load main menu", e);
+            return Integer.parseInt(text);
+        } catch (Exception e) {
+            return null;
         }
     }
 
-    @FXML
-    public void handlePrevPage(ActionEvent event) {
-        if (currentPage > 0) {
-            currentPage--;
-            loadData();
-            logger.info("Navigated to page {}", currentPage);
+    private Double parseDoubleOrNull(String text) {
+        try {
+            return Double.parseDouble(text);
+        } catch (Exception e) {
+            return null;
         }
     }
 
-    @FXML
-    public void handleNextPage(ActionEvent event) {
-        if (currentPage < totalPages - 1) {
-            currentPage++;
-            loadData();
-            logger.info("Navigated to page {}", currentPage);
+    private void logFilterParameters(String type, String transport, String meal,
+                                     Integer minPrice, Integer maxPrice,
+                                     Integer minDays, Integer maxDays,
+                                     Double minRating, Double maxRating) {
+        StringBuilder log = new StringBuilder(showFavourites ? "Loading FAVORITES with filters:" : "Loading TOURS with filters:");
+
+        if (searchQuery != null && !searchQuery.isBlank()) {
+            log.append(" name='").append(searchQuery).append("'");
         }
-    }
+        if (type != null) log.append(", type='").append(type).append("'");
+        if (transport != null) log.append(", transport='").append(transport).append("'");
+        if (meal != null) log.append(", meal='").append(meal).append("'");
 
-    @FXML
-    public void handleSearch(ActionEvent event) {
-        String input = searchField.getText();
-        searchQuery = input != null ? input.trim() : "";
-        currentPage = 0;
-        loadData();
-        logger.info("User searched for '{}'", searchQuery);
-    }
+        if (minPrice != null || maxPrice != null) {
+            log.append(", price=[").append(minPrice != null ? minPrice : "").append("-")
+                    .append(maxPrice != null ? maxPrice : "").append("]");
+        }
 
-    private Integer parseIntOrNull(String input) {
-        try { return Integer.parseInt(input); } catch (Exception e) { return null; }
-    }
-    private Double parseDoubleOrNull(String input) {
-        try { return Double.parseDouble(input); } catch (Exception e) { return null; }
-    }
+        if (minDays != null || maxDays != null) {
+            log.append(", days=[").append(minDays != null ? minDays : "").append("-")
+                    .append(maxDays != null ? maxDays : "").append("]");
+        }
 
-    @FXML
-    public void handleApplyFilters(ActionEvent event) {
-        currentPage = 0;
-        loadData();
-    }
+        if (minRating != null || maxRating != null) {
+            log.append(", rating=[").append(minRating != null ? minRating : "").append("-")
+                    .append(maxRating != null ? maxRating : "").append("]");
+        }
 
+        logger.info(log.toString());
+    }
 }
