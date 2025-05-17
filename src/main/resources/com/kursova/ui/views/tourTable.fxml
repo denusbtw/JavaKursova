@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/23.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.kursova.controller.TableViewController"
+      stylesheets="@/com/kursova/ui/styles/tableStyle.css"
+      spacing="10">
+
+   <padding>
+      <Insets top="10" right="10" bottom="10" left="10"/>
+   </padding>
+
+   <Button fx:id="backButton" text="←" onAction="#handleBack"
+           prefHeight="30.0" prefWidth="100.0" VBox.vgrow="NEVER"/>
+
+   <HBox spacing="10">
+      <TextField fx:id="searchField" HBox.hgrow="ALWAYS" promptText="Пошук за назвою" />
+      <Button fx:id="searchButton"
+              text="Пошук"
+              onAction="#handleSearch"/>
+   </HBox>
+
+   <HBox spacing="10">
+      <ComboBox fx:id="typeFilterBox" promptText="Тип туру"/>
+      <ComboBox fx:id="transportFilterBox" promptText="Транспорт"/>
+      <ComboBox fx:id="mealOptionFilterBox" promptText="Харчування"/>
+      <TextField fx:id="minPriceField" promptText="Мін. ціна"/>
+      <TextField fx:id="maxPriceField" promptText="Макс. ціна"/>
+      <TextField fx:id="minRatingField" promptText="Мін. рейтинг"/>
+      <TextField fx:id="maxRatingField" promptText="Макс. рейтинг"/>
+      <TextField fx:id="minDaysField" promptText="Мін. днів"/>
+      <TextField fx:id="maxDaysField" promptText="Макс. днів"/>
+      <Button fx:id="applyFiltersButton" text="Фільтрувати" onAction="#handleApplyFilters"/>
+   </HBox>
+
+   <TableView fx:id="tourTable" VBox.vgrow="ALWAYS" maxWidth="1920">
+      <columns>
+         <TableColumn fx:id="nameColumn" text="Назва" prefWidth="337" />
+         <TableColumn fx:id="typeColumn" text="Тип" prefWidth="200"/>
+         <TableColumn fx:id="transportColumn" text="Транспорт" prefWidth="200"/>
+         <TableColumn fx:id="mealOptionColumn" text="Харчування" prefWidth="200" />
+         <TableColumn fx:id="numberOfDaysColumn" text="Тривалість (у днях)" prefWidth="150"/>
+         <TableColumn fx:id="priceColumn" text="Вартість" prefWidth="150"/>
+         <TableColumn fx:id="ratingColumn" text="Рейтинг" prefWidth="150"/>
+         <TableColumn fx:id="favouriteColumn" text="Вподобати" prefWidth="150"/>
+      </columns>
+   </TableView>
+
+   <HBox spacing="10">
+      <Button fx:id="prevPageButton" text="←" onAction="#handlePrevPage"/>
+      <Label fx:id="pageLabel" text="Сторінка 1 з ?"/>
+      <Button fx:id="nextPageButton" text="→" onAction="#handleNextPage"/>
+   </HBox>
+</VBox>

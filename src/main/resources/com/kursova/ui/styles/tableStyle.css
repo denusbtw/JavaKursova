@@ -1,0 +1,78 @@
+/* Назви стовпців таблиці: встановлюється червоний фон */
+.table-view .column-header,
+.table-view .column-header-background .filler {
+    -fx-background-color: #9f9898;
+}
+
+/* Текст у заголовках стовпців:
+   зелений колір тексту, жирний шрифт, вирівнювання по центру зліва */
+.table-view .column-header .label {
+    -fx-text-fill: #000000;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER_LEFT;
+}
+
+/* Клітинки таблиці:
+   висота 35px, темно-сірий фон, світло-сірий текст,
+   внутрішнє вирівнювання по центру зліва, однаковий колір рамки та фону */
+.table-view .cell {
+    -fx-cell-size: 35;
+    -fx-alignment: center-left;
+    -fx-background-color: #d6d6d6;
+    -fx-border-color: #a1a1a1;
+    -fx-text-fill: black;
+    -fx-alignment: CENTER_LEFT;
+}
+
+/* Вигляд виділеного рядка:
+   білий фон, текстовий колір — фіолетовий */
+.table-row-cell:selected {
+    -fx-background-color: whitesmoke;
+    -fx-text-background-color: #6622CC;
+}
+
+/* Кнопки прокрутки (стрілки) — невидимі, округлі */
+.table-view .increment-button,
+.table-view .decrement-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 2em;
+}
+
+/* Трек (фон під повзунком) горизонтального та вертикального скролбарів:
+   прозорий, з фіолетовою рамкою, округлі кути */
+.table-view .scroll-bar:horizontal .track,
+.table-view .scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+    -fx-border-color: derive(#6622CC, 80%);
+    -fx-background-radius: 2em;
+    -fx-border-radius: 2em;
+}
+
+/* Повзунок (thumb) скролбарів:
+   темніший фіолетовий, з внутрішнім відступом і округлими краями */
+.table-view .scroll-bar:horizontal .thumb,
+.table-view .scroll-bar:vertical .thumb {
+    -fx-background-color: derive(#6622CC, 90%);
+    -fx-background-insets: 2, 0, 0;
+    -fx-background-radius: 2em;
+}
+
+/* Загальні параметри для діаграм:
+   внутрішній відступ 10px, прозоре тло, прихований напис легенди */
+.chart {
+    -fx-padding: 10px;
+    -fx-background-color: transparent;
+    -fx-legend-visible: false;
+}
+
+/* Фон області побудови діаграми — прозорий */
+.chart-plot-background {
+    -fx-background-color: transparent;
+}
+
+/* Діаграма типу "пиріг":
+   обводка залежить від кольору сектора, але фактично непомітна (0px) */
+.chart-pie {
+    -fx-border-color: derive(-fx-pie-color, 1%);
+    -fx-border-width: 0px;
+}

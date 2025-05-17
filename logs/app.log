@@ -1,0 +1,387 @@
+2025-05-17 15:41:25 INFO  com.kursova.service.TourApiService - Fetching tour types...
+2025-05-17 15:41:25 INFO  com.kursova.service.TourApiService - Fetched 7 tour types
+2025-05-17 15:41:25 INFO  com.kursova.service.TourApiService - Fetching transport names...
+2025-05-17 15:41:25 INFO  com.kursova.service.TourApiService - Fetched 6 transport names
+2025-05-17 15:41:25 INFO  com.kursova.service.TourApiService - Fetching meal options...
+2025-05-17 15:41:25 INFO  com.kursova.service.TourApiService - Fetched 5 meal options
+2025-05-17 15:41:32 INFO  com.kursova.service.TourApiService - Fetching tour types...
+2025-05-17 15:41:32 INFO  com.kursova.service.TourApiService - Fetched 7 tour types
+2025-05-17 15:41:32 INFO  com.kursova.service.TourApiService - Fetching transport names...
+2025-05-17 15:41:32 INFO  com.kursova.service.TourApiService - Fetched 6 transport names
+2025-05-17 15:41:32 INFO  com.kursova.service.TourApiService - Fetching meal options...
+2025-05-17 15:41:32 INFO  com.kursova.service.TourApiService - Fetched 5 meal options
+2025-05-17 15:41:32 INFO  com.kursova.service.TourApiService - Fetching tours with filters: page=0, size=10
+2025-05-17 15:41:32 INFO  com.kursova.service.TourApiService - Successfully fetched 10 tours
+2025-05-17 15:41:39 INFO  com.kursova.service.TourApiService - Fetching tours with filters: page=1, size=10
+2025-05-17 15:41:39 INFO  com.kursova.service.TourApiService - Successfully fetched 10 tours
+2025-05-17 15:41:44 INFO  com.kursova.service.TourApiService - Fetching tour types...
+2025-05-17 15:41:44 INFO  com.kursova.service.TourApiService - Fetched 7 tour types
+2025-05-17 15:41:44 INFO  com.kursova.service.TourApiService - Fetching transport names...
+2025-05-17 15:41:44 INFO  com.kursova.service.TourApiService - Fetched 6 transport names
+2025-05-17 15:41:44 INFO  com.kursova.service.TourApiService - Fetching meal options...
+2025-05-17 15:41:44 INFO  com.kursova.service.TourApiService - Fetched 5 meal options
+2025-05-17 15:41:49 INFO  com.kursova.service.TourApiService - Fetching tour types...
+2025-05-17 15:41:49 INFO  com.kursova.service.TourApiService - Fetched 7 tour types
+2025-05-17 15:41:49 INFO  com.kursova.service.TourApiService - Fetching transport names...
+2025-05-17 15:41:49 INFO  com.kursova.service.TourApiService - Fetched 6 transport names
+2025-05-17 15:41:49 INFO  com.kursova.service.TourApiService - Fetching meal options...
+2025-05-17 15:41:49 INFO  com.kursova.service.TourApiService - Fetched 5 meal options
+2025-05-17 15:41:49 INFO  com.kursova.service.TourApiService - Fetching tours with filters: page=0, size=10
+2025-05-17 15:41:49 INFO  com.kursova.service.TourApiService - Successfully fetched 10 tours
+2025-05-17 15:41:54 INFO  com.kursova.service.TourApiService - Fetching tours with filters: page=1, size=10
+2025-05-17 15:41:54 INFO  com.kursova.service.TourApiService - Successfully fetched 10 tours
+2025-05-17 15:41:57 INFO  com.kursova.service.TourApiService - Fetching tours with filters: page=0, size=10
+2025-05-17 15:41:57 INFO  com.kursova.service.TourApiService - Successfully fetched 10 tours
+2025-05-17 15:42:00 INFO  com.kursova.service.TourApiService - Fetching tours with filters: page=0, size=10, transport='Boat'
+2025-05-17 15:42:00 INFO  com.kursova.service.TourApiService - Successfully fetched 2 tours
+2025-05-17 15:49:47 INFO  c.kursova.controller.MainController - Primary stage set.
+2025-05-17 15:49:48 INFO  c.kursova.controller.MainController - User selected: Show all tours
+2025-05-17 15:49:48 INFO  com.kursova.service.TourApiService - Fetching tour types...
+2025-05-17 15:49:48 INFO  com.kursova.service.TourApiService - Fetched 7 tour types
+2025-05-17 15:49:48 INFO  com.kursova.service.TourApiService - Fetching transport names...
+2025-05-17 15:49:48 INFO  com.kursova.service.TourApiService - Fetched 6 transport names
+2025-05-17 15:49:48 INFO  com.kursova.service.TourApiService - Fetching meal options...
+2025-05-17 15:49:48 INFO  com.kursova.service.TourApiService - Fetched 5 meal options
+2025-05-17 15:49:48 INFO  com.kursova.service.TourApiService - Fetching tours with filters: page=0, size=10
+2025-05-17 15:49:48 INFO  com.kursova.service.TourApiService - Successfully fetched 10 tours
+2025-05-17 15:49:48 INFO  c.kursova.controller.MainController - Loaded tour table view: all, title='Усі путівки'
+2025-05-17 15:49:57 INFO  com.kursova.service.TourApiService - Fetching tours with filters: page=0, size=10, price=[1000-]
+2025-05-17 15:49:57 INFO  com.kursova.service.TourApiService - Successfully fetched 10 tours
+2025-05-17 15:50:03 INFO  com.kursova.service.TourApiService - Fetching tours with filters: page=0, size=10, name='фвівіффві', price=[1000-]
+2025-05-17 15:50:03 INFO  com.kursova.service.TourApiService - Successfully fetched 0 tours
+2025-05-17 15:50:03 INFO  c.k.controller.TableViewController - User searched for 'фвівіффві'
+2025-05-17 15:50:08 INFO  com.kursova.service.TourApiService - Fetching tours with filters: page=0, size=10, name='adv', price=[1000-]
+2025-05-17 15:50:08 INFO  com.kursova.service.TourApiService - Successfully fetched 1 tours
+2025-05-17 15:50:08 INFO  c.k.controller.TableViewController - User searched for 'adv'
+2025-05-17 15:50:16 INFO  com.kursova.service.TourApiService - Fetching tours with filters: page=0, size=10, price=[1000-]
+2025-05-17 15:50:16 INFO  com.kursova.service.TourApiService - Successfully fetched 10 tours
+2025-05-17 15:50:16 INFO  c.k.controller.TableViewController - User searched for ''
+2025-05-17 15:50:21 INFO  com.kursova.service.TourApiService - Fetching tours with filters: page=0, size=10, days=[-15], price=[1000-]
+2025-05-17 15:50:21 INFO  com.kursova.service.TourApiService - Successfully fetched 10 tours
+2025-05-17 15:50:25 INFO  c.kursova.controller.MainController - Primary stage set.
+2025-05-17 15:50:25 INFO  c.k.controller.TableViewController - Returning to main menu
+2025-05-17 15:50:26 INFO  c.kursova.controller.MainController - User selected: Show all tours
+2025-05-17 15:50:26 INFO  com.kursova.service.TourApiService - Fetching tour types...
+2025-05-17 15:50:26 INFO  com.kursova.service.TourApiService - Fetched 7 tour types
+2025-05-17 15:50:26 INFO  com.kursova.service.TourApiService - Fetching transport names...
+2025-05-17 15:50:26 INFO  com.kursova.service.TourApiService - Fetched 6 transport names
+2025-05-17 15:50:26 INFO  com.kursova.service.TourApiService - Fetching meal options...
+2025-05-17 15:50:26 INFO  com.kursova.service.TourApiService - Fetched 5 meal options
+2025-05-17 15:50:26 INFO  com.kursova.service.TourApiService - Fetching tours with filters: page=0, size=10
+2025-05-17 15:50:26 INFO  com.kursova.service.TourApiService - Successfully fetched 10 tours
+2025-05-17 15:50:26 INFO  c.kursova.controller.MainController - Loaded tour table view: all, title='Усі путівки'
+2025-05-17 15:50:27 INFO  c.kursova.controller.MainController - Primary stage set.
+2025-05-17 15:50:27 INFO  c.k.controller.TableViewController - Returning to main menu
+2025-05-17 15:50:28 INFO  c.kursova.controller.MainController - User selected: Show all tours
+2025-05-17 15:50:28 INFO  com.kursova.service.TourApiService - Fetching tour types...
+2025-05-17 15:50:28 INFO  com.kursova.service.TourApiService - Fetched 7 tour types
+2025-05-17 15:50:28 INFO  com.kursova.service.TourApiService - Fetching transport names...
+2025-05-17 15:50:28 INFO  com.kursova.service.TourApiService - Fetched 6 transport names
+2025-05-17 15:50:28 INFO  com.kursova.service.TourApiService - Fetching meal options...
+2025-05-17 15:50:28 INFO  com.kursova.service.TourApiService - Fetched 5 meal options
+2025-05-17 15:50:28 INFO  com.kursova.service.TourApiService - Fetching tours with filters: page=0, size=10
+2025-05-17 15:50:28 INFO  com.kursova.service.TourApiService - Successfully fetched 10 tours
+2025-05-17 15:50:28 INFO  c.kursova.controller.MainController - Loaded tour table view: all, title='Усі путівки'
+2025-05-17 15:50:29 INFO  com.kursova.service.TourApiService - Fetching tours with filters: page=0, size=10, name='dsa'
+2025-05-17 15:50:29 INFO  com.kursova.service.TourApiService - Successfully fetched 0 tours
+2025-05-17 15:50:29 INFO  c.k.controller.TableViewController - User searched for 'dsa'
+2025-05-17 15:50:32 INFO  com.kursova.service.TourApiService - Fetching tours with filters: page=0, size=10, name='adv'
+2025-05-17 15:50:32 INFO  com.kursova.service.TourApiService - Successfully fetched 2 tours
+2025-05-17 15:50:32 INFO  c.k.controller.TableViewController - User searched for 'adv'
+2025-05-17 15:50:35 INFO  com.kursova.service.TourApiService - Fetching tours with filters: page=0, size=10
+2025-05-17 15:50:35 INFO  com.kursova.service.TourApiService - Successfully fetched 10 tours
+2025-05-17 15:50:35 INFO  c.k.controller.TableViewController - User searched for ''
+2025-05-17 15:50:44 INFO  c.kursova.controller.MainController - Primary stage set.
+2025-05-17 15:50:44 INFO  c.k.controller.TableViewController - Returning to main menu
+2025-05-17 15:50:44 INFO  c.kursova.controller.MainController - User selected: Show favourite tours
+2025-05-17 15:50:44 INFO  com.kursova.service.TourApiService - Fetching tour types...
+2025-05-17 15:50:44 INFO  com.kursova.service.TourApiService - Fetched 7 tour types
+2025-05-17 15:50:44 INFO  com.kursova.service.TourApiService - Fetching transport names...
+2025-05-17 15:50:44 INFO  com.kursova.service.TourApiService - Fetched 6 transport names
+2025-05-17 15:50:44 INFO  com.kursova.service.TourApiService - Fetching meal options...
+2025-05-17 15:50:44 INFO  com.kursova.service.TourApiService - Fetched 5 meal options
+2025-05-17 15:50:44 INFO  c.k.controller.TableViewController - Loading FAVORITES with filters:
+2025-05-17 15:50:44 INFO  c.kursova.service.FavoriteApiService - Fetching favorites with filters:
+2025-05-17 15:50:44 INFO  c.kursova.controller.MainController - Loaded tour table view: favourites, title='Улюблені путівки'
+2025-05-17 15:58:09 INFO  c.kursova.controller.MainController - Primary stage set.
+2025-05-17 15:58:11 INFO  c.kursova.controller.MainController - User selected: Show all tours
+2025-05-17 15:58:11 INFO  com.kursova.service.TourApiService - Fetching tour types...
+2025-05-17 15:58:11 INFO  com.kursova.service.TourApiService - Fetched 7 tour types
+2025-05-17 15:58:11 INFO  com.kursova.service.TourApiService - Fetching transport names...
+2025-05-17 15:58:11 INFO  com.kursova.service.TourApiService - Fetched 6 transport names
+2025-05-17 15:58:11 INFO  com.kursova.service.TourApiService - Fetching meal options...
+2025-05-17 15:58:11 INFO  com.kursova.service.TourApiService - Fetched 5 meal options
+2025-05-17 15:58:11 INFO  com.kursova.service.TourApiService - Fetching tours with filters: page=0, size=10
+2025-05-17 15:58:11 INFO  com.kursova.service.TourApiService - Successfully fetched 10 tours
+2025-05-17 15:58:12 INFO  c.kursova.controller.MainController - Loaded tour table view: all, title='Усі путівки'
+2025-05-17 15:58:13 INFO  c.kursova.controller.MainController - Primary stage set.
+2025-05-17 15:58:13 INFO  c.k.controller.TableViewController - Returning to main menu
+2025-05-17 15:58:13 INFO  c.kursova.controller.MainController - User selected: Show favourite tours
+2025-05-17 15:58:13 INFO  com.kursova.service.TourApiService - Fetching tour types...
+2025-05-17 15:58:13 INFO  com.kursova.service.TourApiService - Fetched 7 tour types
+2025-05-17 15:58:13 INFO  com.kursova.service.TourApiService - Fetching transport names...
+2025-05-17 15:58:13 INFO  com.kursova.service.TourApiService - Fetched 6 transport names
+2025-05-17 15:58:13 INFO  com.kursova.service.TourApiService - Fetching meal options...
+2025-05-17 15:58:13 INFO  com.kursova.service.TourApiService - Fetched 5 meal options
+2025-05-17 15:58:13 INFO  c.k.controller.TableViewController - Loading FAVORITES with filters:
+2025-05-17 15:58:13 INFO  c.kursova.service.FavoriteApiService - Fetching favorites with filters:
+2025-05-17 15:58:13 ERROR c.kursova.service.FavoriteApiService - Failed to fetch favorites
+com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize value of type `com.kursova.model.TourDTO[]` from Object value (token `JsonToken.START_OBJECT`)
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 1]
+	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:59)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportInputMismatch(DeserializationContext.java:1767)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1541)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1488)
+	at com.fasterxml.jackson.databind.deser.std.ObjectArrayDeserializer.handleNonArray(ObjectArrayDeserializer.java:347)
+	at com.fasterxml.jackson.databind.deser.std.ObjectArrayDeserializer.deserialize(ObjectArrayDeserializer.java:198)
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:342)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4905)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3848)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3816)
+	at com.kursova.service.FavoriteApiService.getFavorites(FavoriteApiService.java:110)
+	at com.kursova.controller.TableViewController.loadData(TableViewController.java:135)
+	at com.kursova.controller.TableViewController.setShowFavourites(TableViewController.java:35)
+	at com.kursova.controller.MainController.openTourTable(MainController.java:38)
+	at com.kursova.controller.MainController.handleShowFavouriteTours(MainController.java:29)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:65)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at javafx.base@24.0.1/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:112)
+	at javafx.fxml@24.0.1/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:78)
+	at javafx.fxml@24.0.1/javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1845)
+	at javafx.fxml@24.0.1/javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1718)
+	at javafx.base@24.0.1/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@24.0.1/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@24.0.1/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@24.0.1/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@24.0.1/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@24.0.1/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24.0.1/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24.0.1/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24.0.1/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24.0.1/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24.0.1/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@24.0.1/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base@24.0.1/javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.graphics@24.0.1/javafx.scene.Node.fireEvent(Node.java:9005)
+	at javafx.controls@24.0.1/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls@24.0.1/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207)
+	at javafx.controls@24.0.1/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base@24.0.1/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base@24.0.1/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base@24.0.1/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@24.0.1/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@24.0.1/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@24.0.1/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@24.0.1/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24.0.1/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24.0.1/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24.0.1/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24.0.1/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24.0.1/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@24.0.1/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@24.0.1/javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.graphics@24.0.1/javafx.scene.Scene$MouseHandler.process(Scene.java:4005)
+	at javafx.graphics@24.0.1/javafx.scene.Scene.processMouseEvent(Scene.java:1934)
+	at javafx.graphics@24.0.1/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2763)
+	at javafx.graphics@24.0.1/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:352)
+	at javafx.graphics@24.0.1/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:254)
+	at javafx.graphics@24.0.1/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@24.0.1/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:386)
+	at javafx.graphics@24.0.1/com.sun.glass.ui.View.handleMouseEvent(View.java:560)
+	at javafx.graphics@24.0.1/com.sun.glass.ui.View.notifyMouse(View.java:946)
+	at javafx.graphics@24.0.1/com.sun.glass.ui.gtk.GtkApplication._runLoop(Native Method)
+	at javafx.graphics@24.0.1/com.sun.glass.ui.gtk.GtkApplication.lambda$runLoop$1(GtkApplication.java:240)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2025-05-17 15:58:13 INFO  c.kursova.controller.MainController - Loaded tour table view: favourites, title='Улюблені путівки'
+2025-05-17 16:01:26 INFO  c.kursova.controller.MainController - Primary stage set.
+2025-05-17 16:01:27 INFO  c.kursova.controller.MainController - User selected: Show all tours
+2025-05-17 16:01:27 INFO  com.kursova.service.TourApiService - Fetching tour types...
+2025-05-17 16:01:27 INFO  com.kursova.service.TourApiService - Fetched 7 tour types
+2025-05-17 16:01:27 INFO  com.kursova.service.TourApiService - Fetching transport names...
+2025-05-17 16:01:27 INFO  com.kursova.service.TourApiService - Fetched 6 transport names
+2025-05-17 16:01:27 INFO  com.kursova.service.TourApiService - Fetching meal options...
+2025-05-17 16:01:27 INFO  com.kursova.service.TourApiService - Fetched 5 meal options
+2025-05-17 16:01:27 INFO  com.kursova.service.TourApiService - Fetching tours with filters: page=0, size=10
+2025-05-17 16:01:27 INFO  com.kursova.service.TourApiService - Successfully fetched 10 tours
+2025-05-17 16:01:27 INFO  c.kursova.controller.MainController - Loaded tour table view: all, title='Усі путівки'
+2025-05-17 16:01:28 INFO  c.kursova.controller.MainController - Primary stage set.
+2025-05-17 16:01:28 INFO  c.k.controller.TableViewController - Returning to main menu
+2025-05-17 16:01:29 INFO  c.kursova.controller.MainController - User selected: Show favourite tours
+2025-05-17 16:01:29 INFO  com.kursova.service.TourApiService - Fetching tour types...
+2025-05-17 16:01:29 INFO  com.kursova.service.TourApiService - Fetched 7 tour types
+2025-05-17 16:01:29 INFO  com.kursova.service.TourApiService - Fetching transport names...
+2025-05-17 16:01:29 INFO  com.kursova.service.TourApiService - Fetched 6 transport names
+2025-05-17 16:01:29 INFO  com.kursova.service.TourApiService - Fetching meal options...
+2025-05-17 16:01:29 INFO  com.kursova.service.TourApiService - Fetched 5 meal options
+2025-05-17 16:01:29 INFO  c.k.controller.TableViewController - Loading FAVORITES with filters:
+2025-05-17 16:01:29 INFO  c.kursova.controller.MainController - Loaded tour table view: favourites, title='Улюблені путівки'
+2025-05-17 16:01:44 INFO  c.kursova.controller.MainController - Primary stage set.
+2025-05-17 16:01:45 INFO  c.kursova.controller.MainController - User selected: Show favourite tours
+2025-05-17 16:01:45 INFO  com.kursova.service.TourApiService - Fetching tour types...
+2025-05-17 16:01:45 INFO  com.kursova.service.TourApiService - Fetched 7 tour types
+2025-05-17 16:01:45 INFO  com.kursova.service.TourApiService - Fetching transport names...
+2025-05-17 16:01:45 INFO  com.kursova.service.TourApiService - Fetched 6 transport names
+2025-05-17 16:01:45 INFO  com.kursova.service.TourApiService - Fetching meal options...
+2025-05-17 16:01:45 INFO  com.kursova.service.TourApiService - Fetched 5 meal options
+2025-05-17 16:01:45 INFO  c.k.controller.TableViewController - Loading FAVORITES with filters:
+2025-05-17 16:01:45 INFO  c.kursova.controller.MainController - Loaded tour table view: favourites, title='Улюблені путівки'
+2025-05-17 16:01:52 INFO  c.kursova.service.FavoriteApiService - Removing tour with id=1 from favorites
+2025-05-17 16:01:52 INFO  c.k.controller.TableViewController - Removed tour with ID=1 from favorites
+2025-05-17 16:01:52 INFO  c.kursova.service.FavoriteApiService - Removing tour with id=2 from favorites
+2025-05-17 16:01:52 INFO  c.k.controller.TableViewController - Removed tour with ID=2 from favorites
+2025-05-17 16:01:53 INFO  c.kursova.service.FavoriteApiService - Removing tour with id=3 from favorites
+2025-05-17 16:01:53 INFO  c.k.controller.TableViewController - Removed tour with ID=3 from favorites
+2025-05-17 16:01:53 INFO  c.kursova.service.FavoriteApiService - Removing tour with id=4 from favorites
+2025-05-17 16:01:53 INFO  c.k.controller.TableViewController - Removed tour with ID=4 from favorites
+2025-05-17 16:01:53 INFO  c.kursova.service.FavoriteApiService - Removing tour with id=5 from favorites
+2025-05-17 16:01:53 INFO  c.k.controller.TableViewController - Removed tour with ID=5 from favorites
+2025-05-17 16:01:53 INFO  c.kursova.service.FavoriteApiService - Removing tour with id=6 from favorites
+2025-05-17 16:01:53 INFO  c.k.controller.TableViewController - Removed tour with ID=6 from favorites
+2025-05-17 16:01:54 INFO  c.kursova.service.FavoriteApiService - Removing tour with id=7 from favorites
+2025-05-17 16:01:54 INFO  c.k.controller.TableViewController - Removed tour with ID=7 from favorites
+2025-05-17 16:01:54 INFO  c.kursova.service.FavoriteApiService - Removing tour with id=8 from favorites
+2025-05-17 16:01:54 INFO  c.k.controller.TableViewController - Removed tour with ID=8 from favorites
+2025-05-17 16:01:54 INFO  c.kursova.service.FavoriteApiService - Removing tour with id=9 from favorites
+2025-05-17 16:01:54 INFO  c.k.controller.TableViewController - Removed tour with ID=9 from favorites
+2025-05-17 16:01:55 INFO  c.kursova.service.FavoriteApiService - Removing tour with id=10 from favorites
+2025-05-17 16:01:55 INFO  c.k.controller.TableViewController - Removed tour with ID=10 from favorites
+2025-05-17 16:01:55 INFO  c.kursova.controller.MainController - Primary stage set.
+2025-05-17 16:01:55 INFO  c.k.controller.TableViewController - Returning to main menu
+2025-05-17 16:01:56 INFO  c.kursova.controller.MainController - User selected: Show favourite tours
+2025-05-17 16:01:56 INFO  com.kursova.service.TourApiService - Fetching tour types...
+2025-05-17 16:01:56 INFO  com.kursova.service.TourApiService - Fetched 7 tour types
+2025-05-17 16:01:56 INFO  com.kursova.service.TourApiService - Fetching transport names...
+2025-05-17 16:01:56 INFO  com.kursova.service.TourApiService - Fetched 6 transport names
+2025-05-17 16:01:56 INFO  com.kursova.service.TourApiService - Fetching meal options...
+2025-05-17 16:01:56 INFO  com.kursova.service.TourApiService - Fetched 5 meal options
+2025-05-17 16:01:56 INFO  c.k.controller.TableViewController - Loading FAVORITES with filters:
+2025-05-17 16:01:56 INFO  c.kursova.controller.MainController - Loaded tour table view: favourites, title='Улюблені путівки'
+2025-05-17 16:01:57 INFO  c.kursova.service.FavoriteApiService - Removing tour with id=20 from favorites
+2025-05-17 16:01:57 INFO  c.k.controller.TableViewController - Removed tour with ID=20 from favorites
+2025-05-17 16:01:57 INFO  c.kursova.service.FavoriteApiService - Removing tour with id=19 from favorites
+2025-05-17 16:01:57 INFO  c.k.controller.TableViewController - Removed tour with ID=19 from favorites
+2025-05-17 16:01:58 INFO  c.kursova.service.FavoriteApiService - Removing tour with id=18 from favorites
+2025-05-17 16:01:58 INFO  c.k.controller.TableViewController - Removed tour with ID=18 from favorites
+2025-05-17 16:01:58 INFO  c.kursova.controller.MainController - Primary stage set.
+2025-05-17 16:01:58 INFO  c.k.controller.TableViewController - Returning to main menu
+2025-05-17 16:01:59 INFO  c.kursova.controller.MainController - User selected: Show favourite tours
+2025-05-17 16:01:59 INFO  com.kursova.service.TourApiService - Fetching tour types...
+2025-05-17 16:01:59 INFO  com.kursova.service.TourApiService - Fetched 7 tour types
+2025-05-17 16:01:59 INFO  com.kursova.service.TourApiService - Fetching transport names...
+2025-05-17 16:01:59 INFO  com.kursova.service.TourApiService - Fetched 6 transport names
+2025-05-17 16:01:59 INFO  com.kursova.service.TourApiService - Fetching meal options...
+2025-05-17 16:01:59 INFO  com.kursova.service.TourApiService - Fetched 5 meal options
+2025-05-17 16:01:59 INFO  c.k.controller.TableViewController - Loading FAVORITES with filters:
+2025-05-17 16:01:59 INFO  c.kursova.controller.MainController - Loaded tour table view: favourites, title='Улюблені путівки'
+2025-05-17 16:02:00 INFO  c.kursova.controller.MainController - Primary stage set.
+2025-05-17 16:02:00 INFO  c.k.controller.TableViewController - Returning to main menu
+2025-05-17 16:02:01 INFO  c.kursova.controller.MainController - User selected: Show all tours
+2025-05-17 16:02:01 INFO  com.kursova.service.TourApiService - Fetching tour types...
+2025-05-17 16:02:01 INFO  com.kursova.service.TourApiService - Fetched 7 tour types
+2025-05-17 16:02:01 INFO  com.kursova.service.TourApiService - Fetching transport names...
+2025-05-17 16:02:01 INFO  com.kursova.service.TourApiService - Fetched 6 transport names
+2025-05-17 16:02:01 INFO  com.kursova.service.TourApiService - Fetching meal options...
+2025-05-17 16:02:01 INFO  com.kursova.service.TourApiService - Fetched 5 meal options
+2025-05-17 16:02:01 INFO  com.kursova.service.TourApiService - Fetching tours with filters: page=0, size=10
+2025-05-17 16:02:01 INFO  com.kursova.service.TourApiService - Successfully fetched 10 tours
+2025-05-17 16:02:01 INFO  c.kursova.controller.MainController - Loaded tour table view: all, title='Усі путівки'
+2025-05-17 16:02:02 INFO  c.kursova.service.FavoriteApiService - Adding tour with id=1 to favorites
+2025-05-17 16:02:02 INFO  c.k.controller.TableViewController - Added tour with ID=1 to favorites
+2025-05-17 16:02:02 INFO  c.kursova.service.FavoriteApiService - Adding tour with id=2 to favorites
+2025-05-17 16:02:02 INFO  c.k.controller.TableViewController - Added tour with ID=2 to favorites
+2025-05-17 16:02:02 INFO  c.kursova.service.FavoriteApiService - Adding tour with id=3 to favorites
+2025-05-17 16:02:02 INFO  c.k.controller.TableViewController - Added tour with ID=3 to favorites
+2025-05-17 16:02:04 INFO  c.kursova.service.FavoriteApiService - Adding tour with id=4 to favorites
+2025-05-17 16:02:04 INFO  c.k.controller.TableViewController - Added tour with ID=4 to favorites
+2025-05-17 16:02:04 INFO  c.kursova.service.FavoriteApiService - Adding tour with id=5 to favorites
+2025-05-17 16:02:04 INFO  c.k.controller.TableViewController - Added tour with ID=5 to favorites
+2025-05-17 16:02:05 INFO  c.kursova.service.FavoriteApiService - Adding tour with id=6 to favorites
+2025-05-17 16:02:05 INFO  c.k.controller.TableViewController - Added tour with ID=6 to favorites
+2025-05-17 16:02:05 INFO  c.kursova.service.FavoriteApiService - Adding tour with id=7 to favorites
+2025-05-17 16:02:05 INFO  c.k.controller.TableViewController - Added tour with ID=7 to favorites
+2025-05-17 16:02:05 INFO  c.kursova.service.FavoriteApiService - Adding tour with id=8 to favorites
+2025-05-17 16:02:05 INFO  c.k.controller.TableViewController - Added tour with ID=8 to favorites
+2025-05-17 16:02:06 INFO  c.kursova.service.FavoriteApiService - Adding tour with id=9 to favorites
+2025-05-17 16:02:06 INFO  c.k.controller.TableViewController - Added tour with ID=9 to favorites
+2025-05-17 16:02:06 INFO  c.kursova.service.FavoriteApiService - Adding tour with id=10 to favorites
+2025-05-17 16:02:06 INFO  c.k.controller.TableViewController - Added tour with ID=10 to favorites
+2025-05-17 16:02:07 INFO  c.kursova.controller.MainController - Primary stage set.
+2025-05-17 16:02:07 INFO  c.k.controller.TableViewController - Returning to main menu
+2025-05-17 16:02:09 INFO  c.kursova.controller.MainController - User selected: Show all tours
+2025-05-17 16:02:09 INFO  com.kursova.service.TourApiService - Fetching tour types...
+2025-05-17 16:02:09 INFO  com.kursova.service.TourApiService - Fetched 7 tour types
+2025-05-17 16:02:09 INFO  com.kursova.service.TourApiService - Fetching transport names...
+2025-05-17 16:02:09 INFO  com.kursova.service.TourApiService - Fetched 6 transport names
+2025-05-17 16:02:09 INFO  com.kursova.service.TourApiService - Fetching meal options...
+2025-05-17 16:02:09 INFO  com.kursova.service.TourApiService - Fetched 5 meal options
+2025-05-17 16:02:09 INFO  com.kursova.service.TourApiService - Fetching tours with filters: page=0, size=10
+2025-05-17 16:02:09 INFO  com.kursova.service.TourApiService - Successfully fetched 10 tours
+2025-05-17 16:02:09 INFO  c.kursova.controller.MainController - Loaded tour table view: all, title='Усі путівки'
+2025-05-17 16:02:10 INFO  com.kursova.service.TourApiService - Fetching tours with filters: page=1, size=10
+2025-05-17 16:02:10 INFO  com.kursova.service.TourApiService - Successfully fetched 10 tours
+2025-05-17 16:02:10 INFO  c.k.controller.TableViewController - Navigated to page 1
+2025-05-17 16:02:11 INFO  c.kursova.service.FavoriteApiService - Adding tour with id=18 to favorites
+2025-05-17 16:02:11 INFO  c.k.controller.TableViewController - Added tour with ID=18 to favorites
+2025-05-17 16:02:11 INFO  c.kursova.service.FavoriteApiService - Adding tour with id=19 to favorites
+2025-05-17 16:02:11 INFO  c.k.controller.TableViewController - Added tour with ID=19 to favorites
+2025-05-17 16:02:11 INFO  c.kursova.service.FavoriteApiService - Adding tour with id=20 to favorites
+2025-05-17 16:02:11 INFO  c.k.controller.TableViewController - Added tour with ID=20 to favorites
+2025-05-17 16:02:12 INFO  c.kursova.controller.MainController - Primary stage set.
+2025-05-17 16:02:12 INFO  c.k.controller.TableViewController - Returning to main menu
+2025-05-17 16:02:13 INFO  c.kursova.controller.MainController - User selected: Show favourite tours
+2025-05-17 16:02:13 INFO  com.kursova.service.TourApiService - Fetching tour types...
+2025-05-17 16:02:13 INFO  com.kursova.service.TourApiService - Fetched 7 tour types
+2025-05-17 16:02:13 INFO  com.kursova.service.TourApiService - Fetching transport names...
+2025-05-17 16:02:13 INFO  com.kursova.service.TourApiService - Fetched 6 transport names
+2025-05-17 16:02:13 INFO  com.kursova.service.TourApiService - Fetching meal options...
+2025-05-17 16:02:13 INFO  com.kursova.service.TourApiService - Fetched 5 meal options
+2025-05-17 16:02:13 INFO  c.k.controller.TableViewController - Loading FAVORITES with filters:
+2025-05-17 16:02:13 INFO  c.kursova.controller.MainController - Loaded tour table view: favourites, title='Улюблені путівки'
+2025-05-17 16:03:31 INFO  c.kursova.controller.MainController - Primary stage set.
+2025-05-17 16:03:33 INFO  c.kursova.controller.MainController - User selected: Show favourite tours
+2025-05-17 16:03:33 INFO  com.kursova.service.TourApiService - Fetching tour types...
+2025-05-17 16:03:33 INFO  com.kursova.service.TourApiService - Fetched 7 tour types
+2025-05-17 16:03:33 INFO  com.kursova.service.TourApiService - Fetching transport names...
+2025-05-17 16:03:33 INFO  com.kursova.service.TourApiService - Fetched 6 transport names
+2025-05-17 16:03:33 INFO  com.kursova.service.TourApiService - Fetching meal options...
+2025-05-17 16:03:33 INFO  com.kursova.service.TourApiService - Fetched 5 meal options
+2025-05-17 16:03:33 INFO  c.k.controller.TableViewController - Loading FAVORITES with filters:
+2025-05-17 16:03:34 INFO  c.kursova.controller.MainController - Loaded tour table view: favourites, title='Улюблені путівки'
+2025-05-17 16:03:34 INFO  c.k.controller.TableViewController - Loading FAVORITES with filters:
+2025-05-17 16:03:34 INFO  c.k.controller.TableViewController - Navigated to page 1
+2025-05-17 16:03:35 INFO  c.k.controller.TableViewController - Loading FAVORITES with filters:
+2025-05-17 16:03:35 INFO  c.k.controller.TableViewController - Navigated to page 0
+2025-05-17 16:03:38 INFO  c.k.controller.TableViewController - Loading FAVORITES with filters: name='ad'
+2025-05-17 16:03:38 INFO  c.k.controller.TableViewController - User searched for 'ad'
+2025-05-17 16:03:39 INFO  c.kursova.controller.MainController - Primary stage set.
+2025-05-17 16:03:39 INFO  c.k.controller.TableViewController - Returning to main menu
+2025-05-17 16:04:08 INFO  c.kursova.controller.MainController - User selected: Show all tours
+2025-05-17 16:04:08 INFO  com.kursova.service.TourApiService - Fetching tour types...
+2025-05-17 16:04:08 INFO  com.kursova.service.TourApiService - Fetched 7 tour types
+2025-05-17 16:04:08 INFO  com.kursova.service.TourApiService - Fetching transport names...
+2025-05-17 16:04:08 INFO  com.kursova.service.TourApiService - Fetched 6 transport names
+2025-05-17 16:04:08 INFO  com.kursova.service.TourApiService - Fetching meal options...
+2025-05-17 16:04:08 INFO  com.kursova.service.TourApiService - Fetched 5 meal options
+2025-05-17 16:04:08 INFO  com.kursova.service.TourApiService - Fetching tours with filters: page=0, size=10
+2025-05-17 16:04:08 INFO  com.kursova.service.TourApiService - Successfully fetched 10 tours
+2025-05-17 16:04:08 INFO  c.kursova.controller.MainController - Loaded tour table view: all, title='Усі путівки'
+2025-05-17 16:04:11 INFO  c.kursova.service.FavoriteApiService - Removing tour with id=1 from favorites
+2025-05-17 16:04:11 INFO  c.k.controller.TableViewController - Removed tour with ID=1 from favorites
+2025-05-17 16:04:12 INFO  c.kursova.controller.MainController - Primary stage set.
+2025-05-17 16:04:12 INFO  c.k.controller.TableViewController - Returning to main menu
+2025-05-17 16:04:13 INFO  c.kursova.controller.MainController - User selected: Show favourite tours
+2025-05-17 16:04:13 INFO  com.kursova.service.TourApiService - Fetching tour types...
+2025-05-17 16:04:13 INFO  com.kursova.service.TourApiService - Fetched 7 tour types
+2025-05-17 16:04:13 INFO  com.kursova.service.TourApiService - Fetching transport names...
+2025-05-17 16:04:13 INFO  com.kursova.service.TourApiService - Fetched 6 transport names
+2025-05-17 16:04:13 INFO  com.kursova.service.TourApiService - Fetching meal options...
+2025-05-17 16:04:13 INFO  com.kursova.service.TourApiService - Fetched 5 meal options
+2025-05-17 16:04:13 INFO  c.k.controller.TableViewController - Loading FAVORITES with filters:
+2025-05-17 16:04:13 INFO  c.kursova.controller.MainController - Loaded tour table view: favourites, title='Улюблені путівки'
+2025-05-17 16:04:14 INFO  c.k.controller.TableViewController - Loading FAVORITES with filters: name='ad'
+2025-05-17 16:04:14 INFO  c.k.controller.TableViewController - User searched for 'ad'
+2025-05-17 16:04:16 INFO  c.kursova.controller.MainController - Primary stage set.
+2025-05-17 16:04:16 INFO  c.k.controller.TableViewController - Returning to main menu

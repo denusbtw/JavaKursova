@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="500" prefWidth="1100" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kursova.controller.MainController">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <children>
+            <ButtonBar layoutX="341.0" layoutY="123.0" prefHeight="40.0" prefWidth="79.0" />
+            <Button
+                    fx:id="showAllToursButton"
+                    onAction="#handleShowAllTours"
+                    layoutX="450.0"
+                    layoutY="230.0"
+                    mnemonicParsing="false"
+                    prefHeight="25.0"
+                    prefWidth="199.0"
+                    text="Усі путівки"
+                    textAlignment="CENTER"
+            />
+            <Button
+                    fx:id="showFavouriteToursButton"
+                    onAction="#handleShowFavouriteTours"
+                    layoutX="450.0"
+                    layoutY="280.0"
+                    mnemonicParsing="false"
+                    prefHeight="25.0"
+                    prefWidth="199.0"
+                    text="Вподобані путівки"
+                    textAlignment="CENTER"
+            />
+      </children>
+    </AnchorPane>
+  </children></VBox>
