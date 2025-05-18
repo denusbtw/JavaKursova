@@ -1,78 +1,181 @@
-/* Назви стовпців таблиці: встановлюється червоний фон */
+/* === Загальні стилі === */
+.root {
+    -fx-background-color: linear-gradient(to bottom right, #f0f4f8, #e2e8f0);
+    -fx-font-family: "Inter", "Roboto", sans-serif;
+}
+
+/* === Заголовок сторінки === */
+.page-title {
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2d3748;
+    -fx-padding: 10 0 20 0;
+}
+
+/* === Кнопки === */
+.back-button {
+    -fx-background-color: transparent;
+    -fx-border-color: #3182ce;
+    -fx-text-fill: #3182ce;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 6 14;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+
+.back-button:hover {
+    -fx-background-color: #e0f0ff;
+}
+
+.primary-button {
+    -fx-background-color: #3182ce;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 6 16;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-cursor: hand;
+}
+
+.primary-button:hover {
+    -fx-background-color: #2b6cb0;
+}
+
+/* === Текстові поля === */
+.text-field, .combo-box {
+    -fx-pref-height: 38px;
+    -fx-background-color: white;
+    -fx-border-color: #cbd5e0;
+    -fx-border-radius: 6;
+    -fx-border-width: 1.5;
+    -fx-background-radius: 6;
+    -fx-padding: 0 10; /* вертикальний padding при заданій висоті — не потрібен */
+    -fx-font-size: 13px;
+    -fx-text-fill: #2d3748;
+}
+
+.text-field:focused, .combo-box:focused {
+    -fx-border-color: #3182ce;
+    -fx-effect: dropshadow(three-pass-box, rgba(49,130,206,0.2), 4, 0, 0, 2);
+}
+
+.combo-box .arrow-button {
+    -fx-background-color: transparent;
+}
+
+
+/* === Таблиця === */
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 0;
+    -fx-table-cell-border-color: transparent;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-fixed-cell-size: 38px;
+}
+
+.table-column {
+    -fx-alignment: CENTER_LEFT;
+    -fx-font-size: 14px;
+}
+
+/* Заголовки таблиці */
 .table-view .column-header,
 .table-view .column-header-background .filler {
-    -fx-background-color: #9f9898;
+    -fx-background-color: #2d3748;
+    -fx-border-color: transparent;
 }
 
-/* Текст у заголовках стовпців:
-   зелений колір тексту, жирний шрифт, вирівнювання по центру зліва */
 .table-view .column-header .label {
-    -fx-text-fill: #000000;
+    -fx-text-fill: white;
     -fx-font-weight: bold;
     -fx-alignment: CENTER_LEFT;
+    -fx-padding: 8 12;
+    -fx-font-size: 14px;
 }
 
-/* Клітинки таблиці:
-   висота 35px, темно-сірий фон, світло-сірий текст,
-   внутрішнє вирівнювання по центру зліва, однаковий колір рамки та фону */
+/* Клітинки */
 .table-view .cell {
-    -fx-cell-size: 35;
-    -fx-alignment: center-left;
-    -fx-background-color: #d6d6d6;
-    -fx-border-color: #a1a1a1;
-    -fx-text-fill: black;
+    -fx-background-color: transparent;
+    -fx-text-fill: #1a202c;
+    -fx-font-size: 13px;
+    -fx-padding: 0 12;
+    -fx-border-width: 0;
     -fx-alignment: CENTER_LEFT;
 }
 
-/* Вигляд виділеного рядка:
-   білий фон, текстовий колір — фіолетовий */
 .table-row-cell:selected {
-    -fx-background-color: whitesmoke;
-    -fx-text-background-color: #6622CC;
+    -fx-background-color: #ebf8ff;
 }
 
-/* Кнопки прокрутки (стрілки) — невидимі, округлі */
-.table-view .increment-button,
-.table-view .decrement-button {
-    -fx-background-color: transparent;
-    -fx-background-radius: 2em;
+.table-row-cell:selected .cell {
+    -fx-text-fill: #2b6cb0;
 }
 
-/* Трек (фон під повзунком) горизонтального та вертикального скролбарів:
-   прозорий, з фіолетовою рамкою, округлі кути */
-.table-view .scroll-bar:horizontal .track,
-.table-view .scroll-bar:vertical .track {
-    -fx-background-color: transparent;
-    -fx-border-color: derive(#6622CC, 80%);
-    -fx-background-radius: 2em;
-    -fx-border-radius: 2em;
+/* === Приховані скроли === */
+.table-view .scroll-bar,
+.table-view .virtual-flow > .scroll-bar,
+.table-view .scroll-bar:vertical,
+.table-view .scroll-bar:horizontal {
+    -fx-opacity: 0;
+    -fx-max-height: 0;
+    -fx-max-width: 0;
+    -fx-pref-height: 0;
+    -fx-pref-width: 0;
+    -fx-min-height: 0;
+    -fx-min-width: 0;
+    visibility: hidden;
 }
 
-/* Повзунок (thumb) скролбарів:
-   темніший фіолетовий, з внутрішнім відступом і округлими краями */
-.table-view .scroll-bar:horizontal .thumb,
-.table-view .scroll-bar:vertical .thumb {
-    -fx-background-color: derive(#6622CC, 90%);
-    -fx-background-insets: 2, 0, 0;
-    -fx-background-radius: 2em;
-}
-
-/* Загальні параметри для діаграм:
-   внутрішній відступ 10px, прозоре тло, прихований напис легенди */
-.chart {
-    -fx-padding: 10px;
-    -fx-background-color: transparent;
-    -fx-legend-visible: false;
-}
-
-/* Фон області побудови діаграми — прозорий */
-.chart-plot-background {
+.table-view .filler {
     -fx-background-color: transparent;
 }
 
-/* Діаграма типу "пиріг":
-   обводка залежить від кольору сектора, але фактично непомітна (0px) */
-.chart-pie {
-    -fx-border-color: derive(-fx-pie-color, 1%);
-    -fx-border-width: 0px;
+/* === Кнопки пагінації === */
+.pagination-button {
+    -fx-background-color: #edf2f7;
+    -fx-text-fill: #2d3748;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-padding: 6 12;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-border-color: #cbd5e0;
+    -fx-cursor: hand;
+}
+
+.pagination-button:hover {
+    -fx-background-color: #e2e8f0;
+}
+
+.pagination-button:disabled {
+    -fx-opacity: 0.4;
+    -fx-cursor: default;
+}
+
+.fav-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-font-size: 24px; /* ← збільшено */
+    -fx-text-fill: #cbd5e0;
+    -fx-cursor: hand;
+    -fx-padding: 0 0 0 0; /* щільніше */
+    -fx-alignment: CENTER;
+}
+
+.fav-button:hover {
+    -fx-text-fill: #e53e3e;
+}
+
+.fav-button.filled {
+    -fx-text-fill: #e53e3e;
+}
+
+.fav-button.outlined {
+    -fx-text-fill: #a0aec0;
 }

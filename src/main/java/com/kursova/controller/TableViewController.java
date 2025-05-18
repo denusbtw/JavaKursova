@@ -33,6 +33,8 @@ public class TableViewController {
     private final TourApiService tourService = new TourApiService();
     private final FavoriteApiService favoriteService = new FavoriteApiService();
 
+    @FXML private Label titleLabel;
+
     @FXML private Button backButton;
     @FXML private TextField searchField;
     @FXML private Button searchButton;
@@ -64,11 +66,14 @@ public class TableViewController {
 
     public void setShowFavourites(boolean showFavourites) {
         this.showFavourites = showFavourites;
+        titleLabel.setText("Улюблені путівки");
         loadData();
     }
 
     @FXML
     public void initialize() {
+        titleLabel.setText("Усі доступні тури");
+
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
         mealOptionColumn.setCellValueFactory(new PropertyValueFactory<>("mealOption"));
@@ -85,13 +90,37 @@ public class TableViewController {
             }
         });
 
-        tourTable.setFixedCellSize(40);
-        tourTable.itemsProperty().addListener((obs, oldVal, newVal) -> {
-            int rows = Math.min(10, newVal.size());
-            tourTable.prefHeightProperty().bind(
-                    tourTable.fixedCellSizeProperty().multiply(rows).add(28)
-            );
-            tourTable.setMaxHeight(Region.USE_PREF_SIZE);
+        tourTable.setFixedCellSize(38);
+
+        tourTable.setPrefHeight(tourTable.getFixedCellSize() * 10 + 38);
+        tourTable.setMinHeight(Region.USE_PREF_SIZE);
+        tourTable.setMaxHeight(Region.USE_PREF_SIZE);
+
+        tourTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+
+        nameColumn.setMaxWidth(1f * Integer.MAX_VALUE * 3);         // 3/12
+        typeColumn.setMaxWidth(1f * Integer.MAX_VALUE * 1);         // 1/12
+        transportColumn.setMaxWidth(1f * Integer.MAX_VALUE * 1.2);  // 1.2/12
+        mealOptionColumn.setMaxWidth(1f * Integer.MAX_VALUE * 1.4); // 1.4/12
+        numberOfDaysColumn.setMaxWidth(1f * Integer.MAX_VALUE * 1); // 1/12
+        priceColumn.setMaxWidth(1f * Integer.MAX_VALUE * 1);        // 1/12
+        ratingColumn.setMaxWidth(1f * Integer.MAX_VALUE * 0.8);     // 0.8/12
+        favouriteColumn.setMaxWidth(1f * Integer.MAX_VALUE * 0.6);  // 0.6/12
+
+        tourTable.setRowFactory(tv -> new TableRow<>() {
+            @Override
+            protected void updateItem(TourDTO item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || item == null) {
+                    setStyle("");
+                } else if (isSelected()) {
+                    setStyle("-fx-background-color: #ebf8ff;");
+                } else {
+                    int index = getIndex();
+                    String color = (index % 2 == 0) ? "#ffffff" : "#dddddd";
+                    setStyle("-fx-background-color: " + color + ";");
+                }
+            }
         });
 
         addFavouriteButtonToTable();
@@ -176,6 +205,9 @@ public class TableViewController {
         );
 
         tourTable.setItems(FXCollections.observableArrayList(pageResponse.getContent()));
+        favouriteColumn.setVisible(false);
+        favouriteColumn.setVisible(true);
+
         totalPages = pageResponse.getTotalPages();
         pageLabel.setText("Сторінка " + (currentPage + 1) + " з " + totalPages);
         prevPageButton.setDisable(currentPage == 0);
@@ -232,12 +264,13 @@ public class TableViewController {
             }
 
             private void updateButtonStyle(TourDTO tour) {
+                actionButton.getStyleClass().setAll("fav-button");
                 if (tour != null && Boolean.TRUE.equals(tour.getIsFavorite())) {
-                    actionButton.setStyle("-fx-background-color: red;");
                     actionButton.setText("❤");
+                    actionButton.getStyleClass().add("filled");
                 } else {
-                    actionButton.setStyle("-fx-background-color: lightgray;");
                     actionButton.setText("♡");
+                    actionButton.getStyleClass().add("outlined");
                 }
             }
         });
