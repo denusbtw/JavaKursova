@@ -8,6 +8,33 @@ import static org.junit.jupiter.api.Assertions.*;
 public class TourDTOTest {
 
     @Test
+    void allArgsConstructorShouldSetAllFieldsCorrectly() {
+        TourDTO dto = new TourDTO(
+                1,
+                "Tour Name",
+                "Leisure",
+                10,
+                "Full Board",
+                7,
+                1500,
+                4.2,
+                "Plane",
+                true
+        );
+
+        assertEquals(1, dto.getId());
+        assertEquals("Tour Name", dto.getName());
+        assertEquals("Leisure", dto.getType());
+        assertEquals(10, dto.getTransportId());
+        assertEquals("Full Board", dto.getMealOption());
+        assertEquals(7, dto.getNumberOfDays());
+        assertEquals(1500, dto.getPrice());
+        assertEquals(4.2, dto.getRating());
+        assertEquals("Plane", dto.getTransportName());
+        assertTrue(dto.getIsFavorite());
+    }
+
+    @Test
     void jacksonShouldDeserializeTourDTO() throws Exception {
         String json = """
         {
@@ -38,5 +65,4 @@ public class TourDTOTest {
         assertEquals("Bus", dto.getTransportName());
         assertTrue(dto.getIsFavorite());
     }
-
 }

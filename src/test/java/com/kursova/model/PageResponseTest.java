@@ -11,6 +11,39 @@ import static org.junit.jupiter.api.Assertions.*;
 public class PageResponseTest {
 
     @Test
+    void allArgsConstructorShouldSetAllFieldsCorrectly() {
+        TourDTO dto = new TourDTO(
+                1,
+                "Name",
+                "Type",
+                2,
+                "Breakfast",
+                7,
+                1000,
+                4.5,
+                "Bus",
+                true
+        );
+
+        PageResponse<TourDTO> page = new PageResponse<>(
+                List.of(dto),
+                3,
+                30,
+                0,
+                10
+        );
+
+        assertEquals(3, page.getTotalPages());
+        assertEquals(30, page.getTotalElements());
+        assertEquals(0, page.getNumber());
+        assertEquals(10, page.getSize());
+
+        assertNotNull(page.getContent());
+        assertEquals(1, page.getContent().size());
+        assertEquals("Name", page.getContent().get(0).getName());
+    }
+
+    @Test
     void jacksonShouldDeserializePageResponseOfTourDTO() throws Exception {
         String json = """
             {

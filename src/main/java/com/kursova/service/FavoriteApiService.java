@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.kursova.model.PageResponse;
 import com.kursova.model.TourDTO;
+import com.kursova.util.QueryParamBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -42,32 +43,26 @@ public class FavoriteApiService {
             int page, int size
     ) {
         try {
-            StringBuilder urlBuilder = new StringBuilder(URL)
-                    .append("?page=").append(page).append("&size=").append(size);
+            String queryParams = new QueryParamBuilder()
+                    .add("page", page)
+                    .add("size", size)
+                    .add("name", name)
+                    .add("type", type)
+                    .add("mealOption", mealOption)
+                    .add("transportName", transportName)
+                    .add("minPrice", minPrice)
+                    .add("maxPrice", maxPrice)
+                    .add("minDays", minDays)
+                    .add("maxDays", maxDays)
+                    .add("minRating", minRating)
+                    .add("maxRating", maxRating)
+                    .build();
 
-            if (name != null && !name.isBlank())
-                urlBuilder.append("&name=").append(URLEncoder.encode(name, StandardCharsets.UTF_8));
-            if (type != null)
-                urlBuilder.append("&type=").append(URLEncoder.encode(type, StandardCharsets.UTF_8));
-            if (mealOption != null)
-                urlBuilder.append("&mealOption=").append(URLEncoder.encode(mealOption, StandardCharsets.UTF_8));
-            if (transportName != null)
-                urlBuilder.append("&transportName=").append(URLEncoder.encode(transportName, StandardCharsets.UTF_8));
-            if (minPrice != null)
-                urlBuilder.append("&minPrice=").append(minPrice);
-            if (maxPrice != null)
-                urlBuilder.append("&maxPrice=").append(maxPrice);
-            if (minDays != null)
-                urlBuilder.append("&minDays=").append(minDays);
-            if (maxDays != null)
-                urlBuilder.append("&maxDays=").append(maxDays);
-            if (minRating != null)
-                urlBuilder.append("&minRating=").append(minRating);
-            if (maxRating != null)
-                urlBuilder.append("&maxRating=").append(maxRating);
+            String fullUrl = URL + "?" + queryParams;
+            logger.debug("GET {}", fullUrl);
 
             HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create(urlBuilder.toString()))
+                    .uri(URI.create(fullUrl))
                     .GET()
                     .build();
 
@@ -75,6 +70,7 @@ public class FavoriteApiService {
 
             JavaType typeRef = mapper.getTypeFactory()
                     .constructParametricType(PageResponse.class, TourDTO.class);
+
             return mapper.readValue(response.body(), typeRef);
 
         } catch (Exception e) {
@@ -87,30 +83,30 @@ public class FavoriteApiService {
         }
     }
 
-    public void addToFavorites(int tourId) {
+    private void sendRequest(HttpRequest request, String operation, int tourId) {
         try {
-            logger.info("Adding tour with id={} to favorites", tourId);
-            HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create(URL))
-                    .POST(HttpRequest.BodyPublishers.ofString(String.valueOf(tourId)))
-                    .header("Content-Type", "application/json")
-                    .build();
             client.send(request, HttpResponse.BodyHandlers.discarding());
+            logger.info("{} tour with id={}", operation, tourId);
         } catch (Exception e) {
-            logger.error("Failed to add tour with id={} to favorites", tourId, e);
+            logger.error("Failed to {} tour with id={}", operation.toLowerCase(), tourId, e);
         }
     }
 
-    public void removeFromFavorites(int tourId) {
-        try {
-            logger.info("Removing tour with id={} from favorites", tourId);
-            HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create(URL + "/" + tourId))
-                    .DELETE()
-                    .build();
-            client.send(request, HttpResponse.BodyHandlers.discarding());
-        } catch (Exception e) {
-            logger.error("Failed to remove tour with id={} from favorites", tourId, e);
-        }
+    public void addToFavorites(int tourId) {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(URL))
+                .POST(HttpRequest.BodyPublishers.ofString(String.valueOf(tourId)))
+                .header("Content-Type", "application/json")
+                .build();
+        sendRequest(request, "Add to favorites", tourId);
     }
+
+    public void removeFromFavorites(int tourId) {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(URL + "/" + tourId))
+                .DELETE()
+                .build();
+        sendRequest(request, "Remove from favorites", tourId);
+    }
+
 }

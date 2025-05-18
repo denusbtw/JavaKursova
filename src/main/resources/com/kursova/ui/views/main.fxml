@@ -10,7 +10,7 @@
         fx:controller="com.kursova.controller.MainController"
         stylesheets="@/com/kursova/ui/styles/mainStyle.css"
         prefWidth="1100"
-        prefHeight="500"
+        prefHeight="575"
         alignment="CENTER"
         spacing="20"
 >

@@ -1,9 +1,7 @@
 package com.kursova.controller;
 
+import com.kursova.util.ViewLoader;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,15 +29,8 @@ public class MainController {
 
     private void openTourTable(boolean showFavourites, String title) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/kursova/ui/views/tourTable.fxml"));
-            Parent root = loader.load();
-
-            TableViewController controller = loader.getController();
+            TableViewController controller = ViewLoader.load("/com/kursova/ui/views/tourTable.fxml", stage, title);
             controller.setShowFavourites(showFavourites);
-
-            stage.setScene(new Scene(root));
-            stage.setTitle(title);
-            stage.show();
             logger.info("Loaded tour table view: {}, title='{}'", showFavourites ? "favourites" : "all", title);
         } catch (Exception e) {
             logger.error("Failed to load tourTable.fxml", e);
