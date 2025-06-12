@@ -9,11 +9,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.net.URI;
-import java.net.URLEncoder;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 public class FavoriteApiService {
@@ -23,12 +21,12 @@ public class FavoriteApiService {
     private final HttpClient client;
     private final ObjectMapper mapper;
 
-    // Конструктор за замовчуванням — для продакшну
+    // Конструктор за замовчуванням
     public FavoriteApiService() {
         this(HttpClient.newHttpClient(), new ObjectMapper());
     }
 
-    // Конструктор для тестів — ін'єкція залежностей
+    // Конструктор для тестів
     public FavoriteApiService(HttpClient client, ObjectMapper mapper) {
         this.client = client;
         this.mapper = mapper;

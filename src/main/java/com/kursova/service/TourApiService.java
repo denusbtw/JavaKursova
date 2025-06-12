@@ -7,10 +7,7 @@ import com.kursova.model.TourDTO;
 import com.kursova.model.TransportDTO;
 
 import java.net.URI;
-import java.net.URLEncoder;
 import java.net.http.*;
-import java.nio.charset.StandardCharsets;
-import java.util.Collections;
 import java.util.List;
 
 import com.kursova.util.QueryParamBuilder;

@@ -16,14 +16,14 @@ public class FavoriteToggleCell extends TableCell<TourDTO, Void> {
         button.setOnAction(event -> {
             TourDTO tour = getTableView().getItems().get(getIndex());
             if (Boolean.TRUE.equals(tour.getIsFavorite())) {
-                favoriteService.removeFromFavorites(tour.getId());
+                this.favoriteService.removeFromFavorites(tour.getId());
                 tour.setIsFavorite(false);
             } else {
-                favoriteService.addToFavorites(tour.getId());
+                this.favoriteService.addToFavorites(tour.getId());
                 tour.setIsFavorite(true);
             }
             updateStyle(tour);
-            table.refresh();
+            this.table.refresh();
         });
     }
 
